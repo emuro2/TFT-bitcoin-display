@@ -1,5 +1,7 @@
 # TFT-bitcoin-display
-TFT (Thin Film Transistor) Bitcoin Display, LILYGO T-Display-S3 ESP32-S3. 
+TFT (Thin Film Transistor) Bitcoin Display, LILYGO T-Display-S3 ESP32-S3.  
+
+<img src="https://github.com/emuro2/TFT-bitcoin-display/assets/3782936/2ca29a34-58b5-4ba1-82fc-a4561aa8e648" width="200"/>
 
 ## Start Here:
 https://github.com/Xinyuan-LilyGO/T-Display-S3
