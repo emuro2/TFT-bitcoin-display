@@ -1,3 +1,4 @@
+#include <WiFi.h>
 #include "TFT_eSPI.h"
 #include "bitcoinlogo.h"
 
@@ -9,6 +10,8 @@ TFT_eSPI tft = TFT_eSPI();
 #define PIN_LCD_BL 38  // BackLight Pin
 int progress = 0;
 int blocks = 0;
+const char* wifi_ssid = "YOUR_SSID";
+const char* wifi_password = "YOUR_PASS";
 
 
 void setup() {
@@ -34,8 +37,16 @@ void setup() {
   tft.pushImage(205, 40, 136, 170, bitcoinlogo);
   tft.setTextSize(1);
   tft.setTextDatum(4);
-
   delay(100);
+
+  // Connect to WiFi.
+  Serial.printf("Connecting to %s ...", wifi_ssid);
+  WiFi.begin(wifi_ssid, wifi_password);
+  while (WiFi.status() != WL_CONNECTED) {
+      delay(1000);
+      Serial.print(".");
+  }
+  Serial.println("Wifi Connected.");
   Serial.println("Setup Complete!");
 
   delay(1000);
