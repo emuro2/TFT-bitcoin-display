@@ -10,6 +10,7 @@ https://github.com/Xinyuan-LilyGO/T-Display-S3
 2. Click OK and the software will install. 
 3. Search for ESP32 in Tools → Board Manager and install `esp32` (Arduino-ESP32)
 4. Copy everything from the [T-Display-S3 repository](https://github.com/Xinyuan-LilyGO/T-Display-S3) lib folder to [Arduino library folder](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries#manual-installation) (e.g. `C:\Users\YourName\Documents\Arduino\libraries`)
+    - Backup TFT_eSPI folder is copied in this repo's lib folder.
 5. Select the correct settings in the Tools menu as shown below.
 
 | Setting                  | Value                            |
