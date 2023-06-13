@@ -10,8 +10,10 @@ TFT_eSPI tft = TFT_eSPI();
 #define PIN_LCD_BL 38  // BackLight Pin
 int progress = 0;
 int blocks = 0;
-const char* wifi_ssid = "YOUR_SSID";
-const char* wifi_password = "YOUR_PASS";
+WiFiClient client;
+char server[] = "www.google.com";
+const char* wifi_ssid = "ssid";
+const char* wifi_password = "pass";
 
 
 void setup() {
@@ -47,6 +49,15 @@ void setup() {
       Serial.print(".");
   }
   Serial.println("Wifi Connected.");
+
+  if (client.connect(server, 443)) {
+    Serial.printf("Connected to %s...", server);
+    // Make a HTTP request:
+    client.println("GET /search?q=arduino HTTP/1.1");
+    client.println("Host: www.google.com");
+    client.println("Connection: close");
+    client.println();
+  }
   Serial.println("Setup Complete!");
 
   delay(1000);
@@ -54,11 +65,29 @@ void setup() {
 
 void loop() {
   tft.setTextColor(TFT_ORANGE, TFT_BLACK);
-  if (!digitalRead(topbutton) && !digitalRead(lowerbutton)) {
+  if (!digitalRead(top_button) && !digitalRead(lower_button)) {
     tft.drawString("  HODL!  ", 77, 55, 4);
   } else {
     tft.drawString("  BITCOIN!  ", 80, 55, 4);
   }
 
-  delay(100);
+  
+
+  while (client.available()) {
+    char c = client.read();
+    Serial.print(c);
+  }
+
+  if (!client.connected()) {
+    // Serial.println();
+    // Serial.println("disconnecting from server.");
+    // client.connect("www.google.com", 80);
+    // Serial.printf("Connected to %s...", server);
+    // client.println("GET /search?q=arduino HTTP/1.1");
+    // client.println("Host: www.google.com");
+    // client.println("Connection: close");
+    // client.println();
+  }
+
+  delay(1000);
 }
