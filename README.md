@@ -4,7 +4,15 @@ TFT (Thin Film Transistor) Bitcoin Display, LILYGO T-Display-S3 ESP32-S3.
 <img src="https://github.com/emuro2/TFT-bitcoin-display/assets/3782936/2ca29a34-58b5-4ba1-82fc-a4561aa8e648" width="200"/>
 
 ## BitcoinDisplay
-<img src="https://github.com/emuro2/TFT-bitcoin-display/assets/3782936/feefede0-8ea3-4597-955d-6d691801c0de)" width="500"/>
+- Bitcoin Price
+<img src="https://github.com/emuro2/TFT-bitcoin-display/assets/3782936/feefede0-8ea3-4597-955d-6d691801c0de" width="500"/>
+
+## BitcoinDashboard
+- Block Height
+- Bitcoin Price USD
+- Block Reward
+<img src="https://github.com/emuro2/TFT-bitcoin-display/assets/3782936/d3984de9-d623-4071-a8c9-6798e886f168" width="500"/>
+
 
 
 ## Start Here:
