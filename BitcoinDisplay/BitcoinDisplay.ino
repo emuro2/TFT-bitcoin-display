@@ -12,9 +12,7 @@ TFT_eSPI tft = TFT_eSPI();
 #define lower_button 14
 #define PIN_POWER_ON 15  // Power Pin
 #define PIN_LCD_BL 38  // BackLight Pin
-int progress = 0;
-int blocks = 0;
-// WiFiClient client;
+
 WiFiClientSecure client;
 char server[] = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC";
 const char* wifi_ssid = "wifi";
@@ -127,7 +125,7 @@ String httpGETRequest(const char* serverName) {
 }
 
 void loop() {
-  Serial.print("loop...");
+  Serial.println("loop...");
   tft.setTextColor(TFT_ORANGE, TFT_BLACK);
   tft.drawString(display, 200, 55, 4);
 
